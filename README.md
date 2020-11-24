@@ -1,11 +1,43 @@
-# TicTacToe
-This Project will be using C# with its GUI stuff and a working unbeatable AI.
-The folder TicTacToe was made with Visual Studio 2017 and contains the code for this project.
-The folder TicTacToe App is the .exe folder with the SaveFiles.
-If you want to play TicTacToe with friends follow these instuctions.
-1. Download TicTacToe App and make sure all 4 files is still in a folder.
-2. (Optional) Create a shortcut to the .exe file in the folder (Should be named TicTacToe.exe).
-3. Run the .exe file and your done!
+# Projet de TicTacToe
 
-IMPORTANT:
-MAKE SURE YOU KEEP THE .EXE FILE WITH THE SAVEFILES IN A SEARATE FOLDER WITH NOTHING ELSE INSIDE FAILURE TO DO SO MAY CAUSE FILES TO BE CREATED OR DELETED WHERE YOU DO NOT WANT THEM TO BE.
+Ceci est un jeu en CSharpe, reproduisant le jeu physique du meme nom. Le principe etant d'alligner 3 meme forme (rond ou carre) pour gagner!
+
+## Prérequis:
+
+* Visual Studio (ici version 2019)
+
+## Documentation:
+
+A la suite vous trouverez une documentation detaille de la programmation de ce projet:
+
+
+### Le netoyage de la grille de jeu:
+
+```
+private void recommencer()
+        {
+            for (int i = 0; i <= tblbtn3X3.GetUpperBound(0); i++)
+            {
+                for (int l = 0; l <= tblbtn3X3.GetUpperBound(1); l++)
+                {
+                    if (tblbtn3X3[i,l] == "X" || tblbtn3X3[i, l] == "O")
+                    {
+                        tblbtn3X3[i, l] = "";
+                    }
+                    
+                }
+            }
+            
+        }
+```
+
+..* Premiere boucle FOR:
+  Elle sert ici a se deplacer entre les lignes de la grilles de jeu (tblbtn3x3).
+..* Deuxieme boucle FOR:
+  Elle sert ici a se deplacer entre les colonnes de la grilles de jeu (tblbtn3x3).
+..* Resultat:
+  La conbinaison de ces deux boucles permette de passer par toute les cases du tableau afin de leur entrer une valeur vide ("```tblbtn3X3[i, l] = "";```") pour recommencer le jeu.
+  
+#### Cheat Sheet utiliser pour la redaction de cette documentation:
+
+  [CheatSheet Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Wiki Markdown")
